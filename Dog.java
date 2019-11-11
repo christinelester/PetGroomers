@@ -1,4 +1,7 @@
-
+/*
+ * Dog class representing dog being brought in to be groomed. Has private variables for name and age of the dog. Implements 
+ * comparable, making the dogs sortable by age.
+ */
 public class Dog implements Comparable<Dog> {
 	
 	private String name;
