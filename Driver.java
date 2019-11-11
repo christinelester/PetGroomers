@@ -94,10 +94,10 @@ public class Driver extends JFrame implements ActionListener {
 
 
       userInput = petField.getText();
-      
+      Owner owner = map.get(userInput);
 
       //get owner from hashmap
-      //salField.setText());
+      ownerField.setText(owner.toString());
    }
    
    private void addToGroomingQueue(Owner o, Dog d) {
