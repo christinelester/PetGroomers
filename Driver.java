@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
+import java.util.Stack;
 import java.util.TreeSet;
 
 import javax.swing.JFrame;
@@ -27,6 +28,7 @@ public class Driver extends JFrame implements ActionListener {
    private HashMap<Dog, Owner> map;
    private Queue<Dog> groomingQueue;
    private Set<Owner> prizeDrawing;
+   private Stack<Dog> groomingStack;
 
 
    /* Constructor creates GUI components and adds GUI components
@@ -35,6 +37,7 @@ public class Driver extends JFrame implements ActionListener {
 	   map = new HashMap<Dog, Owner>();
 	   groomingQueue = new LinkedList<Dog>();
 	   prizeDrawing = new TreeSet<Owner>();
+	   groomingStack = new Stack<Dog>();
 	   
       // Used to specify GUI component layout
       GridBagConstraints layoutConst = null;
@@ -100,10 +103,11 @@ public class Driver extends JFrame implements ActionListener {
       ownerField.setText(owner.toString());
    }
    
-   private void addToGroomingQueue(Owner o, Dog d) {
+   private void groomingOrder(Owner o, Dog d) {
 	   map.put(d, o);
 	   prizeDrawing.add(o);
 	   groomingQueue.add(d);
+	   groomingStack.add(d);
    }
 
  
