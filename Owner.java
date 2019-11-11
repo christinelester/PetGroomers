@@ -1,5 +1,5 @@
 
-public class Owner {
+public class Owner implements Comparable<Owner> {
 	
 	private String name;
 	private String phoneNum;
@@ -26,6 +26,11 @@ public class Owner {
 	@Override
 	public String toString() {
 		return name + ", " + phoneNum;
+	}
+
+	@Override
+	public int compareTo(Owner o) {
+		return this.name.compareTo(o.getName());
 	}
 
 }
