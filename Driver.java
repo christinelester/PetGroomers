@@ -8,6 +8,8 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -108,6 +110,17 @@ public class Driver extends JFrame implements ActionListener {
 	   prizeDrawing.add(o);
 	   groomingQueue.add(d);
 	   groomingStack.add(d);
+   }
+   
+   private String ownerListing() {
+	   ArrayList<Owner> ownerList = new ArrayList<Owner>(map.values());
+	   Collections.sort(ownerList);
+	   StringBuffer textBuf = new StringBuffer();
+	   for (Owner o : ownerList) {
+		   textBuf.append(o);
+		   textBuf.append('\n');
+	   }
+	   return textBuf.toString();
    }
 
  
