@@ -1,4 +1,8 @@
-
+/*
+ * Owner class to represent owner of dog being brought in to be groomed. Has private variables representing
+ * their name, phone number, and VIP status. Implements comparable, making the owners comparable alphabetically
+ *  by name.
+ */
 public class Owner implements Comparable<Owner> {
 	
 	private String name;

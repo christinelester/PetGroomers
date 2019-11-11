@@ -1,3 +1,8 @@
+/*
+ * Interface for a dog groomer's. Displays frame titled Pet Groomers. With an input field to type in a pet name and
+ * displays pets corresponding owner
+ */
+
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
