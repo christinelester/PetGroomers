@@ -4,8 +4,10 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
+import java.util.TreeSet;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -19,12 +21,16 @@ public class Driver extends JFrame implements ActionListener {
    
    private HashMap<Dog, Owner> map;
    private Queue<Dog> groomingQueue;
-   private Set<Owner> prizeDrawingPool;
+   private Set<Owner> prizeDrawing;
 
 
    /* Constructor creates GUI components and adds GUI components
       using a GridBagLayout. */
    Driver() {
+	   map = new HashMap<Dog, Owner>();
+	   groomingQueue = new LinkedList<Dog>();
+	   prizeDrawing = new TreeSet<Owner>();
+	   
       // Used to specify GUI component layout
       GridBagConstraints layoutConst = null;
 
@@ -87,6 +93,12 @@ public class Driver extends JFrame implements ActionListener {
 
       //get owner from hashmap
       //salField.setText());
+   }
+   
+   private void addToGroomingQueue(Owner o, Dog d) {
+	   map.put(d, o);
+	   prizeDrawing.add(o);
+	   groomingQueue.add(d);
    }
 
  
