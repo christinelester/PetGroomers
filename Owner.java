@@ -22,5 +22,10 @@ public class Owner {
 	public boolean isVip() {
 		return isVip;
 	}
+	
+	@Override
+	public String toString() {
+		return name + ", " + phoneNum;
+	}
 
 }
