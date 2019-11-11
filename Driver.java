@@ -3,6 +3,10 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.Queue;
+import java.util.Set;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -11,7 +15,11 @@ public class Driver extends JFrame implements ActionListener {
    private JLabel petLabel;
    private JLabel ownerLabel;    
    private JTextField petField; 
-   private JTextField ownerField; 
+   private JTextField ownerField;
+   
+   private HashMap<Dog, Owner> map;
+   private Queue<Dog> groomingQueue;
+   private Set<Owner> prizeDrawingPool;
 
 
    /* Constructor creates GUI components and adds GUI components
@@ -29,7 +37,7 @@ public class Driver extends JFrame implements ActionListener {
   
       petField = new JTextField(15);
       petField.setEditable(true);
-      petField.setText("0");
+      petField.setText("");
       petField.addActionListener(this);
 
       ownerField = new JTextField(15);
